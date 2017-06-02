@@ -1,0 +1,54 @@
+{
+  "name": "YouTrack",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "npm-run-all --parallel electron",
+    "test": "electron-mocha --renderer --require babel-register test/*.js",
+    "lint": "eslint .",
+    "test:watch": "nodemon --watch *.js --watch tests/**/*.js --exec 'npm run -s test'",
+    "electron": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=public/img/logo.icns --prune=true --out=release-builds"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "electron": "~1.6.2",
+    "electron-default-menu": "1.0.1",
+    "google-closure-library": "^20170409.0.0",
+    "lodash": "4.17.4",
+    "material-ui": "^0.17.4",
+    "prop-types": "^15.5.9",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "react-slot-fill": "^1.0.0-alpha.12",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "electron-mocha": "^3.4.0",
+    "electron-packager": "^8.7.0",
+    "eslint": "3.19.0",
+    "nodemon": "^1.11.0",
+    "npm-run-all": "4.0.2"
+  }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+
+  <script>
+    if (process.env.NODE_ENV !== 'production') {
+      const watcher = require('fs').watch(require('path').resolve(__dirname, '../'), {recursive: true}, (eventType, filename) => {
+        if (/\.(js|html|css)$/.test(filename)) {
+          watcher.close();
+          location.reload();
+        }
+      });
+    }
+  </script>
+  <script>
+    require('babel-register');
+    require('../renderer.js')
+  </script>
+</html>
